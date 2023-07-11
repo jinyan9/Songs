@@ -42,7 +42,7 @@ public class EditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DBHelper db = new DBHelper(EditActivity.this);
-                if (rg.getCheckedRadioButtonId() == R.id.radioButton1){
+                if (rg.getCheckedRadioButtonId() == R.id.rbtn1){
                     data.setTitle(etTitle.getText().toString());
                     data.setSingers(etSinger.getText().toString());
                     data.setYear(Integer.parseInt(etYear.getText().toString()));
@@ -50,7 +50,7 @@ public class EditActivity extends AppCompatActivity {
                     db.updateSong(data);
                     db.close();
                     finish();
-                } else if (rg.getCheckedRadioButtonId() == R.id.radioButton2){
+                } else if (rg.getCheckedRadioButtonId() == R.id.rbtn2){
                     data.setTitle(etTitle.getText().toString());
                     data.setSingers(etSinger.getText().toString());
                     data.setYear(Integer.parseInt(etYear.getText().toString()));
@@ -58,7 +58,7 @@ public class EditActivity extends AppCompatActivity {
                     db.updateSong(data);
                     db.close();
                     finish();
-                } else if (rg.getCheckedRadioButtonId() == R.id.radioButton3){
+                } else if (rg.getCheckedRadioButtonId() == R.id.rbtn3){
                     data.setTitle(etTitle.getText().toString());
                     data.setSingers(etSinger.getText().toString());
                     data.setYear(Integer.parseInt(etYear.getText().toString()));
@@ -66,7 +66,7 @@ public class EditActivity extends AppCompatActivity {
                     db.updateSong(data);
                     db.close();
                     finish();
-                } else if (rg.getCheckedRadioButtonId() == R.id.radioButton4){
+                } else if (rg.getCheckedRadioButtonId() == R.id.radio4){
                     data.setTitle(etTitle.getText().toString());
                     data.setSingers(etSinger.getText().toString());
                     data.setYear(Integer.parseInt(etYear.getText().toString()));
@@ -74,7 +74,7 @@ public class EditActivity extends AppCompatActivity {
                     db.updateSong(data);
                     db.close();
                     finish();
-                } else if (rg.getCheckedRadioButtonId() == R.id.radioButton5){
+                } else if (rg.getCheckedRadioButtonId() == R.id.radio5){
                     data.setTitle(etTitle.getText().toString());
                     data.setSingers(etSinger.getText().toString());
                     data.setYear(Integer.parseInt(etYear.getText().toString()));

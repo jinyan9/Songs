@@ -64,12 +64,56 @@ public class DBHelper extends SQLiteOpenHelper {
                 String singers = cursor.getString(1);
                 int year = cursor.getInt(2);
                 int stars = cursor.getInt(3);
-                Song obj = new Song(title, singers, year, stars);
+                Song obj = new Song( id, title, singers, year, stars);
                 songs.add(obj);
             } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
         return songs;
+    }
+    public ArrayList<Song> getSongs() {
+        ArrayList<Song> tasks = new ArrayList<Song>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COLUMN_ID, COLUMN_TITLE, COLUMN_SINGERS, COLUMN_YEAR, COLUMN_STARS};
+        Cursor cursor = db.query(TABLE_NAME, columns, null, null, null, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String title = cursor.getString(1);
+                String singers = cursor.getString(2);
+                int year = cursor.getInt(3);
+                int stars = cursor.getInt(4);
+                Song obj = new Song(id, title, singers, year, stars);
+                tasks.add(obj);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return tasks;
+    }
+
+    public int updateSong(Song data){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TITLE, data.getTitle());
+        values.put(COLUMN_SINGERS, data.getSingers());
+        values.put(COLUMN_YEAR, data.getYear());
+        values.put(COLUMN_STARS, data.getStars());
+        String condition = COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(data.getId())};
+        int result = db.update(TABLE_NAME, values, condition, args);
+        db.close();
+        return result;
+    }
+
+    public int deleteSong(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String condition = COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(id)};
+        int result = db.delete(TABLE_NAME, condition, args);
+        db.close();
+        return result;
     }
 }

@@ -23,8 +23,8 @@ public class SongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitysongs);
 
-        listView = findViewById(R.id.listView);
-        btn = findViewById(R.id.btn);
+        listView = findViewById(R.id.lvDisplay);
+        btn = findViewById(R.id.btnFilterStars);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

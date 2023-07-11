@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText editTitle, editSingers, editYear;
+    private EditText editTitle, editSingers, editYear , editID ;
     private RadioGroup radioGroup;
 
     private DBHelper dbHelper;
@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         int year = Integer.parseInt(editYear.getText().toString());
         int stars = getSelectedStars();
 
-        Song song = new Song(title, singers, year, stars);
+        int id = Integer.parseInt(editID.getText().toString());;
+        Song song = new Song(id,title, singers, year, stars);
         dbHelper.addSong(song);
 
         Toast.makeText(this, "Song saved", Toast.LENGTH_SHORT).show();
