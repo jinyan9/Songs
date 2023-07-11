@@ -21,6 +21,26 @@
         android:textSize="34sp" />
 
     <TextView
+        android:id="@+id/tvSongID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:hint="Song ID"
+        android:text="Song ID"
+        android:textColor="#EC47B0"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/etSongID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="10dp"
+        android:enabled="false"
+        android:inputType="text" />
+
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +75,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etSingers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -175,23 +195,25 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnInsert"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnUpdate"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/aclonica"
-            android:padding="10dp"
-            android:text="INSERT"
-            android:textColor="#FFFFFF" />
+            android:layout_weight="1"
+            android:text="update" />
 
         <Button
-            android:id="@+id/btnShowList"
-            android:layout_width="match_parent"
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/aclonica"
-            android:padding="10dp"
-            android:text="SHOW LIST"
-            android:textColor="#FFFFFF" />
+            android:layout_weight="1"
+            android:text="delete" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cancel" />
     </LinearLayout>
 
 
-</LinearLayout>
